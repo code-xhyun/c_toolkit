@@ -1,0 +1,22 @@
+{
+  "name": "c_toolkit",
+  "version": "1.0.0",
+  "description": "corbin's cli tooklit",
+  "main": "c-toolkit.js",
+  "bin": {
+    "ctoolkit": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.9.2",
+    "typescript": "^5.2.2"
+  }
+}
