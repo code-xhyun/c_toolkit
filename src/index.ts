@@ -7,7 +7,7 @@ function killProcessOnPort(port: number | string) {
     `lsof -i :${port} | grep LISTEN | awk '{print $2}'`,
     (err, stdout, stderr) => {
       if (err) {
-        console.error(`exec error: ${err}`);
+        console.error(`[CTOOLKIT] exec error: ${err}`);
         return;
       }
 
@@ -15,13 +15,13 @@ function killProcessOnPort(port: number | string) {
       if (processId) {
         exec(`kill -9 ${processId}`, (err, stdout, stderr) => {
           if (err) {
-            console.error(`exec error: ${err}`);
+            console.error(`[CTOOLKIT] exec error: ${err}`);
             return;
           }
-          console.log(`Process on port ${port} has been killed.`);
+          console.log(`[CTOOLKIT] Process on port ${port} has been killed.`);
         });
       } else {
-        console.log(`No process listening on port ${port}`);
+        console.log(`[CTOOLKIT] No process listening on port ${port}`);
       }
     }
   );
